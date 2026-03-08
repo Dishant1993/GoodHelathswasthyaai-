@@ -1,0 +1,52 @@
+FAMILY HEALTH INSURANCE POLICY
+
+Policy Number: FHP-2026-001
+Effective Date: January 1, 2026
+Coverage Period: 12 months
+Covered Members: Up to 6 family members
+
+COVERED SERVICES:
+1. Office Visits (CPT-99213, CPT-99214, CPT-99215)
+   - Coverage: 90% after deductible
+   - Copay: $20 per visit
+   - Annual limit: 20 visits per family member
+
+2. Diagnostic Tests
+   - Complete Blood Count (CPT-85025): 85% coverage
+   - Comprehensive Metabolic Panel (CPT-80053): 85% coverage
+   - Chest X-Ray (CPT-71020): 80% coverage
+   - CT Scan Head/Brain (CPT-70450): 75% coverage
+   - Annual limit: $5,000 per family
+
+3. Emergency Services (CPT-99283)
+   - Coverage: 85% after deductible
+   - Copay: $100
+
+4. Electrocardiogram (CPT-93000)
+   - Coverage: 80%
+   - Pre-authorization required for non-emergency
+
+5. Surgical Procedures
+   - Knee Arthroscopy (CPT-29881): 80% coverage
+   - Pre-authorization required
+
+DEDUCTIBLE: $750 per person, $2,000 family maximum
+OUT-OF-POCKET MAXIMUM: $4,000 per person, $8,000 family maximum
+
+NETWORK: HMO/PPO Hybrid Network
+- In-network providers: Full coverage as listed
+- Out-of-network providers: 60% of in-network coverage
+
+PRE-AUTHORIZATION REQUIRED FOR:
+- All imaging procedures (CT, MRI)
+- Surgical procedures
+- Hospital admissions
+- Specialist referrals
+
+ADDITIONAL BENEFITS:
+- Preventive care: 100% coverage (annual checkups, vaccinations)
+- Maternity care: 90% coverage
+- Pediatric care: 95% coverage
+- Prescription drugs: 75% coverage
+- Vision care: $200 annual allowance per member
+- Dental care: Basic coverage included

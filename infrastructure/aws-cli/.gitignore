@@ -1,0 +1,14 @@
+# Never commit AWS credentials or sensitive configuration
+credentials
+config
+*.backup.*
+*.bak
+
+# Exclude any files with actual account IDs or keys
+*account-ids*
+*secrets*
+*keys*
+
+# Allow templates
+!*.template
+!*.example

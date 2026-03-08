@@ -1,0 +1,42 @@
+BASIC HEALTH INSURANCE POLICY
+
+Policy Number: BHP-2026-001
+Effective Date: January 1, 2026
+Coverage Period: 12 months
+
+COVERED SERVICES:
+1. Office Visits (CPT-99213, CPT-99214, CPT-99215)
+   - Coverage: 80% after deductible
+   - Copay: $30 per visit
+   - Annual limit: 12 visits
+
+2. Diagnostic Tests
+   - Complete Blood Count (CPT-85025): 70% coverage
+   - Comprehensive Metabolic Panel (CPT-80053): 70% coverage
+   - Chest X-Ray (CPT-71020): 60% coverage
+   - Annual limit: $2,000
+
+3. Emergency Services (CPT-99283)
+   - Coverage: 70% after deductible
+   - Copay: $150
+
+4. Electrocardiogram (CPT-93000)
+   - Coverage: 60%
+   - Requires pre-authorization
+
+EXCLUDED SERVICES:
+- CT Scans (CPT-70450) - Not covered
+- Knee Arthroscopy (CPT-29881) - Not covered
+- Elective surgeries - Not covered
+
+DEDUCTIBLE: $1,000 per year
+OUT-OF-POCKET MAXIMUM: $5,000 per year
+
+NETWORK: PPO Network
+- In-network providers: Full coverage as listed
+- Out-of-network providers: 50% of in-network coverage
+
+PRE-AUTHORIZATION REQUIRED FOR:
+- All imaging procedures
+- Surgical procedures
+- Hospital admissions

@@ -1,0 +1,45 @@
+# AWS CLI Configuration Template for SwasthyaAI
+# Copy this to ~/.aws/config and replace placeholders with actual values
+
+[profile swasthyaai-management]
+region = ap-south-1
+output = json
+
+[profile swasthyaai-dev]
+region = ap-south-1
+output = json
+role_arn = arn:aws:iam::<DEV_ACCOUNT_ID>:role/OrganizationAccountAccessRole
+source_profile = swasthyaai-management
+# Uncomment and configure if using MFA:
+# mfa_serial = arn:aws:iam::<MANAGEMENT_ACCOUNT_ID>:mfa/<YOUR_USERNAME>
+
+[profile swasthyaai-staging]
+region = ap-south-1
+output = json
+role_arn = arn:aws:iam::<STAGING_ACCOUNT_ID>:role/OrganizationAccountAccessRole
+source_profile = swasthyaai-management
+# Uncomment and configure if using MFA:
+# mfa_serial = arn:aws:iam::<MANAGEMENT_ACCOUNT_ID>:mfa/<YOUR_USERNAME>
+
+[profile swasthyaai-prod]
+region = ap-south-1
+output = json
+role_arn = arn:aws:iam::<PROD_ACCOUNT_ID>:role/OrganizationAccountAccessRole
+source_profile = swasthyaai-management
+# Uncomment and configure if using MFA:
+# mfa_serial = arn:aws:iam::<MANAGEMENT_ACCOUNT_ID>:mfa/<YOUR_USERNAME>
+
+[profile swasthyaai-security]
+region = ap-south-1
+output = json
+role_arn = arn:aws:iam::<SECURITY_ACCOUNT_ID>:role/OrganizationAccountAccessRole
+source_profile = swasthyaai-management
+# Uncomment and configure if using MFA:
+# mfa_serial = arn:aws:iam::<MANAGEMENT_ACCOUNT_ID>:mfa/<YOUR_USERNAME>
+
+# Optional: Configure additional settings
+# [profile swasthyaai-dev]
+# cli_pager = 
+# cli_auto_prompt = on-partial
+# duration_seconds = 3600
+# role_session_name = dev-session

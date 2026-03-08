@@ -1,0 +1,37 @@
+# SwasthyaAI - Terraform Variables Example
+# Copy this file to terraform.tfvars and fill in your values
+
+# AWS Configuration
+aws_region  = "ap-south-1"
+environment = "dev"  # Change to "staging" or "prod" as needed
+
+# Project Configuration
+project_name = "swasthyaai"
+
+# Network Configuration
+vpc_cidr           = "10.0.0.0/16"
+enable_nat_gateway = true
+enable_vpn_gateway = false
+
+# Database Configuration
+rds_instance_class     = "db.t3.small"
+rds_allocated_storage  = 20
+
+# Cache Configuration
+elasticache_node_type = "cache.t3.micro"
+
+# Lambda Configuration
+lambda_reserved_concurrency = 100
+
+# API Gateway Configuration
+api_rate_limit = 100
+
+# Cognito Configuration
+cognito_mfa_configuration = "OPTIONAL"
+
+# AWS Organizations Account Emails
+# IMPORTANT: Each email must be unique and not already associated with an AWS account
+dev_account_email      = "swasthyaai-dev@example.com"
+staging_account_email  = "swasthyaai-staging@example.com"
+prod_account_email     = "swasthyaai-prod@example.com"
+security_account_email = "swasthyaai-security@example.com"

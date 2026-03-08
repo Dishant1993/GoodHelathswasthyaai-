@@ -1,0 +1,87 @@
+# Dependencies
+node_modules/
+*/node_modules/
+frontend/node_modules/
+backend/lambdas/*/node_modules/
+
+# Build outputs
+frontend/dist/
+frontend/build/
+*.zip
+backend/lambdas/*/function.zip
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+frontend/.env
+backend/.env
+
+# Terraform
+infrastructure/.terraform/
+infrastructure/.terraform.lock.hcl
+infrastructure/terraform.tfstate
+infrastructure/terraform.tfstate.backup
+infrastructure/*.tfvars
+infrastructure/.terraform.tfstate.lock.info
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# AWS
+.aws/
+*.pem
+*.key
+
+# Sensitive files
+*credentials*
+*secrets*
+*.tfvars
+terraform.tfstate*
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Generated diagrams (optional - remove if you want to commit them)
+generated-diagrams/*.png

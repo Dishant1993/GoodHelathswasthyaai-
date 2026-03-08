@@ -1,0 +1,46 @@
+PREMIUM HEALTH INSURANCE POLICY
+
+Policy Number: PHP-2026-001
+Effective Date: January 1, 2026
+Coverage Period: 12 months
+
+COVERED SERVICES:
+1. Office Visits (CPT-99213, CPT-99214, CPT-99215)
+   - Coverage: 100% (no copay)
+   - Unlimited visits
+
+2. Diagnostic Tests
+   - Complete Blood Count (CPT-85025): 100% coverage
+   - Comprehensive Metabolic Panel (CPT-80053): 100% coverage
+   - Chest X-Ray (CPT-71020): 100% coverage
+   - CT Scan Head/Brain (CPT-70450): 90% coverage
+   - No annual limit
+
+3. Emergency Services (CPT-99283)
+   - Coverage: 100%
+   - No copay
+
+4. Electrocardiogram (CPT-93000)
+   - Coverage: 100%
+   - No pre-authorization required
+
+5. Surgical Procedures
+   - Knee Arthroscopy (CPT-29881): 90% coverage
+   - Pre-authorization required
+
+DEDUCTIBLE: $500 per year
+OUT-OF-POCKET MAXIMUM: $3,000 per year
+
+NETWORK: PPO Network with nationwide coverage
+- In-network providers: Full coverage as listed
+- Out-of-network providers: 80% of in-network coverage
+
+PRE-AUTHORIZATION REQUIRED FOR:
+- Major surgical procedures only
+- Hospital admissions over 3 days
+
+ADDITIONAL BENEFITS:
+- Preventive care: 100% coverage
+- Prescription drugs: 80% coverage
+- Mental health services: 100% coverage
+- Telemedicine: Unlimited, no copay
