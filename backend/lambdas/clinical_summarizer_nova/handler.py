@@ -27,7 +27,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 # Environment variables
-BEDROCK_MODEL_ID = 'amazon.nova-2-lite-v1:0'
+BEDROCK_MODEL_ID = 'us.amazon.nova-lite-v1:0'
 CONFIDENCE_THRESHOLD = float(os.environ.get('CONFIDENCE_THRESHOLD', '0.9'))
 LOGS_BUCKET = os.environ.get('LOGS_BUCKET', 'swasthyaai-clinical-logs')
 
@@ -64,6 +64,7 @@ def lambda_handler(event, context):
         
         # Step 4: Save to DynamoDB
         note_id = str(uuid.uuid4())
+        timestamp = datetime.utcnow().isoformat()
         
         clinical_note_item = {
             'note_id': note_id,
@@ -83,19 +84,18 @@ def lambda_handler(event, context):
         if patient_id:
             timeline_item = {
                 'patient_id': patient_id,
-                'timestamp': timestamp,
+                'event_timestamp': timestamp,
                 'event_type': 'clinical_note',
                 'event_id': note_id,
                 'description': f'Clinical note created by {user_id}',
                 'data': {
                     'note_id': note_id,
-                    'confidence': float(confidence)
+                    'confidence': Decimal(str(confidence))
                 }
             }
             timeline_table.put_item(Item=timeline_item)
         
         # Step 5: Save to S3
-        timestamp = datetime.utcnow().isoformat()
         log_data = {
             'timestamp': timestamp,
             'user_id': user_id,
@@ -117,7 +117,7 @@ def lambda_handler(event, context):
         response_data = {
             'note_id': note_id,
             'soap_note': soap_note,
-            'confidence': confidence,
+            'confidence': float(confidence),
             'entities_count': len(entities),
             'requires_review': confidence < CONFIDENCE_THRESHOLD,
             'timestamp': timestamp
@@ -143,7 +143,7 @@ def extract_medical_entities(text: str) -> List[Dict[str, Any]]:
                     'text': entity['Text'],
                     'type': entity['Type'],
                     'category': entity['Category'],
-                    'score': float(entity['Score'])
+                    'score': Decimal(str(entity['Score']))
                 })
         
         logger.info(f"Extracted {len(entities)} medical entities")
@@ -175,21 +175,35 @@ Generate a SOAP note in JSON format with these exact fields:
 
 Be concise, professional, and HIPAA-compliant."""
         
-        # Call Nova 2 Lite
+        # Call Nova Lite
         response = bedrock_runtime.invoke_model(
             modelId=BEDROCK_MODEL_ID,
             body=json.dumps({
                 'messages': [
-                    {'role': 'system', 'content': SYSTEM_PROMPT},
-                    {'role': 'user', 'content': user_prompt}
+                    {'role': 'user', 'content': [
+                        {'text': f"{SYSTEM_PROMPT}\n\n{user_prompt}"}
+                    ]}
                 ],
-                'temperature': 0.3,
-                'max_tokens': 2000
+                'inferenceConfig': {
+                    'temperature': 0.3,
+                    'maxTokens': 2000
+                }
             })
         )
         
         result = json.loads(response['body'].read())
-        soap_text = result['content'][0]['text']
+        
+        # Parse Nova Lite response format
+        if 'output' in result and 'message' in result['output']:
+            message_content = result['output']['message']['content']
+            if isinstance(message_content, list) and len(message_content) > 0:
+                soap_text = message_content[0].get('text', '')
+            else:
+                soap_text = str(message_content)
+        elif 'content' in result and isinstance(result['content'], list):
+            soap_text = result['content'][0].get('text', '')
+        else:
+            soap_text = str(result)
         
         # Parse JSON from response
         if '```json' in soap_text:
