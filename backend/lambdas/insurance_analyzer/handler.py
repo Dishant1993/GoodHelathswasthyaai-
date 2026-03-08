@@ -106,7 +106,7 @@ Task: Analyze if this procedure is covered under the policy and calculate covera
         # Add to timeline
         timeline_item = {
             'patient_id': patient_id,
-            'timestamp': timestamp,
+            'event_timestamp': timestamp,
             'event_type': 'insurance_check',
             'event_id': check_id,
             'description': f'Insurance eligibility checked for {procedure_code}',
